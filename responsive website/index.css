@@ -1,0 +1,460 @@
+@font-face {
+  font-family: "neu";
+  src: url(./NeueHaasDisplayBoldItalic.ttf);
+  font-weight: 100;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gilroy";
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#page1 {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  background-color: #efeae3;
+  padding: 0 2vw;
+}
+
+nav {
+  width: 100%;
+  padding: 2vw 0vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-part2 {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+
+.nav-part2 h4 {
+  padding: 10px 20px;
+  border: 1px solid rgb(219, 13, 13);
+  border-radius: 50px;
+  font-weight: 500;
+  color: rgb(63, 62, 62);
+  font-weight: bolder;
+  font-size: 18px;
+  position: relative;
+  transition: all ease 0.4s;
+  overflow: hidden;
+}
+
+.nav-part2 h4::after {
+  content: "";
+  background-color: black;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  bottom: -100%;
+  border-radius: 50%;
+  transition: all ease 0.3s;
+}
+
+.nav-part2 h4:hover::after {
+  bottom: 0;
+  border-radius: 50px;
+}
+
+.nav-part2 h4 a {
+  color: black;
+  text-decoration: none;
+  position: relative;
+  z-index: 9;
+}
+
+.nav-part2 h4:hover a {
+  color: white;
+}
+
+#center {
+  height: 65vh;
+  width: 100%;
+  /* background-color: orange; */
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-bottom: 0.5px solid black;
+  padding-bottom: 2.5vw;
+}
+
+#left h3 {
+  width: 25vw;
+  font-size: 1.8vw;
+  font-family: "Times New Roman", Times, serif;
+  line-height: 2vw;
+}
+
+#center h1 {
+  font-size: 10vw;
+  line-height: 7vw;
+  text-align: right;
+}
+
+#page1 video {
+  width: 100%;
+  border-radius: 30px;
+  margin-top: 5vw;
+  position: relative;
+}
+
+#hero-shape {
+  position: absolute;
+  width: 46vw;
+  height: 36vw;
+  /* border-radius: 50%; */
+  right: 0;
+  top: 65vh;
+  filter: blur(18px);
+}
+
+#hero-1 {
+  background-color: #fe320a;
+  height: 32vw;
+  width: 30vw;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  filter: blur(18px);
+  position: absolute;
+  animation-name: anime1;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+#hero-2 {
+  background: linear-gradient(#fe320a, #fe840a);
+  height: 30vw;
+  width: 30vw;
+  border-radius: 50%;
+  filter: blur(28px);
+  position: absolute;
+  animation-name: anime2;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+#hero-3 {
+  background: linear-gradient(#fe320a, #fe840a);
+  height: 30vw;
+  width: 30vw;
+  border-radius: 50%;
+  filter: blur(28px);
+  position: absolute;
+  animation-name: anime1;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes anime1 {
+  from {
+    transform: translate(55%, -3%);
+  }
+  to {
+    transform: translate(10%, 10%);
+  }
+}
+
+@keyframes anime2 {
+  from {
+    transform: translate(5%, -5%);
+  }
+  to {
+    transform: translate(-20%, 30%);
+  }
+}
+
+#page2 {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #efeae3;
+  padding: 8vw 0;
+  position: relative;
+}
+
+#moving-text {
+  background-color: #efeae3;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+#moving-text h1 {
+  font-size: 9vw;
+  display: inline-block;
+}
+
+#moving-text::-webkit-scrollbar {
+  display: none;
+}
+
+#gola {
+  height: 70px;
+  width: 70px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 1vw 2vw;
+}
+
+.con {
+  white-space: nowrap;
+  display: inline-block;
+  animation-name: move;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes move {
+  from {
+    transform: translate(0);
+  }
+  to {
+    transform: translate(-100%);
+  }
+}
+
+#page2-bottom {
+  height: 80vh;
+  width: 100%;
+  /* background-color: chartreuse; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4.5vw;
+  position: relative;
+  z-index: 10;
+}
+
+/*
+1vh = viewport height / 100
+
+For a MacBook Air M1 with 1600px height:
+1vh = 1600 / 100 = 16px
+
+vh totally depends on the viewport (browser window height),
+not directly on the full screen resolution.
+
+
+We use  'vh' insted of 'px' because ----> 'px' is fixed and 'vh' changes automatically according to screen height (Responsive design).
+*/
+
+#page2-bottom h1 {
+  font-size: 4vw;
+  width: 60%;
+  line-height: 4vw;
+}
+
+#bottom-part-2 {
+  width: 20%;
+}
+
+#bottom-part-2 img {
+  border-radius: 5%;
+  width: 100%;
+}
+
+#bottom-part-2 p {
+  font-weight: 100;
+  font-size: 1vw;
+  margin-top: 1.8vw;
+}
+
+#page2 #gooey {
+  height: 32vw;
+  width: 32vw;
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(to top right, #fe320a, #fb8b01);
+  top: 59%;
+  left: 25%;
+  filter: blur(25px);
+
+  animation: gooey 4s ease-in-out infinite alternate;
+}
+
+@keyframes gooey {
+  from {
+    transform: translate(10%, -10%) skew(0);
+  }
+  to {
+    transform: translate(-10%, 10%) skew(-12deg);
+  }
+}
+
+#page-3 {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #efeae3;
+}
+
+.elem {
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.161);
+  height: 150px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 2vw;
+  overflow: hidden;
+}
+.elem h2 {
+  font-size: 4vw;
+  z-index: 9;
+  position: relative;
+}
+
+.elem .overlay {
+  height: 100%;
+  width: 100%;
+  background-color: #fb8b01;
+  position: absolute;
+  left: 0;
+  top: -100%;
+  transition: all ease 0.25s;
+}
+
+.elem:hover .overlay {
+  top: 0;
+}
+
+#fixed-image {
+  height: 30vw;
+  width: 24vw;
+  border-radius: 15px;
+  position: fixed;
+  z-index: 99;
+  left: 50%;
+  top: 25%;
+  display: none;
+  background-size: cover;
+  background-position: center;
+}
+
+#navpage3 {
+  background-color: #efeae3;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  height: 5vh;
+  padding: 3.7vw 2.4vw;
+}
+
+#allprojects {
+  display: flex;
+}
+
+#allprojects h2 {
+  padding: 1vw 1.5vw;
+  border-radius: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.327);
+  position: relative;
+  overflow: hidden;
+}
+
+#allprojects h2 a {
+  text-decoration: none;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 100;
+  position: relative;
+  z-index: 9;
+}
+
+#allprojects h2::after {
+  content: "";
+  background-color: #ff0000;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  bottom: -100%;
+  border-radius: 50%;
+  transition: all ease 0.3s;
+  overflow: hidden;
+}
+
+#allprojects h2:hover a {
+  color: white;
+}
+
+#allprojects h2:hover::after {
+  bottom: 0;
+  border-radius: 50px;
+}
+
+#page4 {
+  background-color: #efeae3;
+  min-height: 130vh;
+  width: 100%;
+  padding: 3vh 4vh;
+  display: flex;
+  align-items: flex-end;
+}
+
+#page4 #black-box {
+  background-color: black;
+  height: 100vh;
+  width: 100%;
+  margin: 0 2vw;
+  border-radius: 40px;
+  color: white;
+  display: flex;
+}
+
+#page4 #written_part {
+  padding: 40vh 9vh;
+  flex-direction: column;
+  display: flex;
+  padding: 17vw 9vw;
+  gap: 10px;
+}
+
+#page4 #written_part h1 {
+  font-size: 5vw;
+  font-family: serif;
+  font-weight: 100;
+}
+
+#page4 #written_part h1:hover{
+  color: red;
+  background-color: white;
+  border-radius: 30px;
+  width: 60%;
+  align-items: center;
+  text-align: center;
+}
+
+#page4 #image_part {
+  background-color: #fb8b01;
+  width: 100%;
+  border-radius: 40px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+#page4 #image_part img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 40px;
+}
