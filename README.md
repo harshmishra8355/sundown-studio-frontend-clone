@@ -41,4 +41,3 @@ Harsh Mishra
 
 B.Sc. Information Technology Student
 
-GitHub: https://github.com/your-username
